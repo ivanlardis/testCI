@@ -11,6 +11,7 @@
     tools:context="com.example.black_sony.testci.MainActivity">
 
     <TextView
+        android:id="@+id/textTTT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
