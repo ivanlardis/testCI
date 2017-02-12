@@ -31,14 +31,14 @@ android {
 
             def Properties props=new Properties()
             props.load(project.rootProject.file('parametrs.properties').newDataInputStream())
-            project.ext.set("archivesBaseName",'pixabay-'+ props["name"]+' versionName-'+  versionName);
+//            project.ext.set("archivesBaseName",'pixabay-'+ props["name"]+'versionName-'+  versionName);
         }
         flickr {
             applicationId "com.example.black_sony.pixabay"
 
             def Properties props=new Properties()
             props.load(project.rootProject.file('parametrs.properties').newDataInputStream())
-            project.ext.set("archivesBaseName",'flickr-'+ props["name"]+' versionName-'+ versionName);
+//            project.ext.set("archivesBaseName",'flickr-'+ props["name"]+'versionName-'+ versionName);
         }
 
 
