@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import timber.log.Timber;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -15,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textView= (TextView) findViewById(R.id.textTTT);
     textView.setText(""+getResources().getString(R.string.mainView));
+
+      Timber.d("dsds","dsdssd");
 
     }
 }

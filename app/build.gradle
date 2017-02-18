@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
-
+def Properties props=new Properties()
+props.load(project.rootProject.file('parametrs.properties').newDataInputStream())
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -10,7 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "YOUR_TOKEN", '"ABRAKADABRA"'
+        buildConfigField "boolean", "WITH_LOGS", props["WITH_LOGS"]
 
 
 
@@ -29,15 +30,13 @@ android {
             applicationId "com.example.black_sony.flickr"
             versionName "2.0.0"
 
-            def Properties props=new Properties()
-            props.load(project.rootProject.file('parametrs.properties').newDataInputStream())
+
             project.ext.set("archivesBaseName",'pixabay-'+ props["APK_NAME"]+' versionName-'+  versionName);
         }
         flickr {
             applicationId "com.example.black_sony.pixabay"
             versionName "1.0.0"
-            def Properties props=new Properties()
-            props.load(project.rootProject.file('parametrs.properties').newDataInputStream())
+
             project.ext.set("archivesBaseName",'flickr-'+ props["APK_NAME"]+' versionName-'+ versionName);
         }
 
@@ -53,4 +52,6 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.1'
     testCompile 'junit:junit:4.12'
+
+    compile 'com.jakewharton.timber:timber:4.5.1'
 }
